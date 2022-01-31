@@ -1,4 +1,4 @@
-backup ﻿<?php
+<?php
 
 // Replace this with your own email address
 $siteOwnersEmail = 'cabezaleandro@gmail.com';
