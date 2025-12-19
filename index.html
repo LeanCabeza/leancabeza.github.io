@@ -5,29 +5,82 @@
    <!--- Basic Page Needs
    ================================================== -->
    <meta charset="utf-8">
-	<title>Leandro Cabeza Portfolio</title>
-	<meta name="description" content="Portfolio de Leandro Cabeza.">
+	<title>Leandro Cabeza - Desarrollador MuleSoft & Software | Portfolio</title>
+	<meta name="description" content="Portfolio profesional de Leandro Cabeza. Desarrollador especializado en MuleSoft, integración empresarial, APIs REST y transformación de datos. Certificado MCD Level 2.">
 	<meta name="author" content="Leandro Cabeza">
+	<meta name="keywords" content="MuleSoft, Desarrollador, Integración Empresarial, APIs, DataWeave, Software Developer, Argentina">
+	<meta name="robots" content="index, follow">
+	<link rel="canonical" href="https://leancabeza.github.io/">
 	
 <!-- Facebook Meta Tags -->
 <meta property="og:url" content="https://leancabeza.github.io/">
 <meta property="og:type" content="website">
-<meta property="og:title" content="Leandro Cabeza Portfolio">
-<meta property="og:description" content="Portfolio de Leandro Cabeza.">
+<meta property="og:title" content="Leandro Cabeza - Desarrollador MuleSoft & Software">
+<meta property="og:description" content="Desarrollador especializado en MuleSoft, integración empresarial y soluciones de software. Certificado MCD Level 2.">
 <meta property="og:image" content="https://leancabeza.github.io/images/preview_page.png">
+<meta property="og:image:alt" content="Leandro Cabeza - Desarrollador de Software">
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="leancabeza.github.io">
 <meta property="twitter:url" content="https://leancabeza.github.io/">
-<meta name="twitter:title" content="Leandro Cabeza Portfolio">
-<meta name="twitter:description" content="Portfolio de Leandro Cabeza.">
+<meta name="twitter:title" content="Leandro Cabeza - Desarrollador MuleSoft & Software">
+<meta name="twitter:description" content="Portfolio profesional especializado en MuleSoft, integración empresarial y desarrollo de APIs.">
 <meta name="twitter:image" content="https://leancabeza.github.io/images/preview_page.png">
+<meta name="twitter:image:alt" content="Leandro Cabeza - Desarrollador de Software">
 
+<!-- JSON-LD Structured Data -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org/",
+  "@type": "Person",
+  "name": "Leandro Cabeza",
+  "url": "https://leancabeza.github.io",
+  "image": "https://leancabeza.github.io/images/profilepic.jpg",
+  "sameAs": [
+    "https://github.com/LeanCabeza",
+    "https://www.linkedin.com/in/leandro-cabeza/",
+    "https://www.facebook.com/leandro.cabeza97/",
+    "https://www.instagram.com/leeancabeza/"
+  ],
+  "jobTitle": "MuleSoft Developer Sr",
+  "worksFor": {
+    "@type": "Organization",
+    "name": "Mobile Computing"
+  },
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "MuleSoft Certified Developer - Level 2",
+      "credentialCategory": "certification"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "MuleSoft Certified Developer - Level 1",
+      "credentialCategory": "certification"
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Tecnicatura Universitaria en Programación",
+      "credentialCategory": "degree"
+    }
+  ],
+  "knowsAbout": [
+    "MuleSoft",
+    "API Development",
+    "Data Integration",
+    "DataWeave",
+    "REST",
+    "SOAP",
+    "Enterprise Integration"
+  ]
+}
+</script>
 
    <!-- Mobile Specific Metas
    ================================================== -->
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+	<meta name="theme-color" content="#17a697">
 
 	<!-- CSS
     ================================================== -->
@@ -83,8 +136,8 @@
 <body>
 
    <!-- Language Toggle Button -->
-   <button id="language-toggle" class="language-toggle" onclick="toggleLanguage()">
-      <img class="flag-img" id="flag-img" src="https://flagcdn.com/es.svg" alt="Bandera" />
+   <button id="language-toggle" class="language-toggle" onclick="toggleLanguage()" aria-label="Cambiar idioma">
+      <img class="flag-img" id="flag-img" src="https://flagcdn.com/es.svg" alt="Bandera de España" />
       <span id="lang-text">Español</span>
    </button>
 
@@ -92,10 +145,10 @@
    ================================================== -->
    <header id="home">
 
-      <nav id="nav-wrap">
+      <nav id="nav-wrap" role="navigation" aria-label="Navegación principal">
 
-         <a class="mobile-btn" href="#nav-wrap" title="Show navigation">Show navigation</a>
-	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
+         <a class="mobile-btn" href="#nav-wrap" title="Mostrar navegación">Mostrar navegación</a>
+	      <a class="mobile-btn" href="#" title="Ocultar navegación">Ocultar navegación</a>
 
          <ul id="nav" class="nav">
             <li class="current"><a class="smoothscroll" href="#home" data-i18n="nav_home">Inicio</a></li>
@@ -113,10 +166,10 @@
             <h2 class="responsive-headline" style="color:white;" data-i18n="banner_subtitle">Desarrollador de Software</h2>
             <hr />
             <ul class="social">
-               <li><a href="https://github.com/LeanCabeza"><i class="fa fa-github"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/leandro-cabeza/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://www.facebook.com/leandro.cabeza97/"><i class="fa fa-facebook"></i></a></li>
-               <li><a href="https://www.instagram.com/leeancabeza/"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="https://github.com/LeanCabeza" title="GitHub - Leandro Cabeza" rel="external"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+               <li><a href="https://www.linkedin.com/in/leandro-cabeza/" title="LinkedIn - Leandro Cabeza" rel="external"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+               <li><a href="https://www.facebook.com/leandro.cabeza97/" title="Facebook - Leandro Cabeza" rel="external"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+               <li><a href="https://www.instagram.com/leeancabeza/" title="Instagram - Leandro Cabeza" rel="external"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
             </ul>
          </div>
       </div>
@@ -136,7 +189,7 @@
 	      
          <div class="three columns">
 
-            <img class="profile-pic"  src="images/profilepic.jpg" alt="" />
+            <img class="profile-pic" src="images/profilepic.jpg" alt="Foto de perfil de Leandro Cabeza - Desarrollador" />
 
          </div>
 
@@ -152,7 +205,7 @@
 
                <div class="columns contact-details">
 
-                  <h2><u data-i18n="contact_details">Detalles de Contacto</u></h2>
+                  <h3><u data-i18n="contact_details">Detalles de Contacto</u></h3>
                   <p class="address" style="color:white;">
 						   <span>Leandro Cabeza</span><br>
 						   <span data-i18n="location">Berazategui, Buenos Aires</span><br>
@@ -188,7 +241,7 @@
       <div class="row work">
 
          <div class="three columns header-col">
-            <h1><span data-i18n="exp_laboral">Exp. Laboral</span></h1>
+            <h2><span data-i18n="exp_laboral">Exp. Laboral</span></h2>
          </div>
 
          <div class="nine columns main-col">
@@ -198,7 +251,7 @@
                <div class="twelve columns">
                   <div align="center">
                      <img src="/images/logos_educacion/mobile_computing.png"
-                     alt="Logo Mobile Computing"
+                     alt="Logo Mobile Computing - Empresa empleadora"
                      width="200px"
                      height="200px">
                   </div> 
@@ -229,7 +282,7 @@
                <div class="twelve columns">
                   <div align="center">
                      <img src="/images/logos_educacion/globant.png"
-                     alt="Logo Globant"
+                     alt="Logo Globant - Empresa empleadora"
                      width="200px"
                      height="200px">
                   </div> 
@@ -256,13 +309,12 @@
             </div> 
             <!-- item end -->
 
-
             <div class="row item">
 
                <div class="twelve columns">
                   <div align="center">
                      <img src="/images/logos_educacion/vippinn.png"
-                     alt="Logo Vippinn"
+                     alt="Logo Vippinn - Empresa empleadora"
                      width="150px"
                      height="150px">
                   </div> 
@@ -295,7 +347,7 @@
                <div class="twelve columns">
                   <div align="center">
                      <img src="/images/logos_educacion/epidata.png"
-                     alt="Logo Epidata"
+                     alt="Logo Epidata - Empresa empleadora"
                      width="200px"
                      height="200px">
                   </div>
@@ -324,7 +376,7 @@
                <div class="twelve columns">
                   <div align="center">
                      <img src="/images/logos_educacion/vn.png"
-                     alt="Logo Vn"
+                     alt="Logo Vn - Empresa empleadora"
                      width="200px"
                      height="200px">
                   </div>
@@ -350,7 +402,7 @@
          <div class="row education">
 
             <div class="three columns header-col">
-               <h1><span data-i18n="education">Educación</span></h1>
+               <h2><span data-i18n="education">Educación</span></h2>
             </div>
 
             <div class="nine columns main-col">
@@ -360,7 +412,7 @@
                   <div class="twelve columns">
                      <div align="center">
                         <img src="/images/logos_educacion/utn.png"
-                        alt="Logo Utn Avellaneda"
+                        alt="Logo Universidad Tecnológica Nacional - Avellaneda"
                         width="120px"
                         height="120px">
                      </div>
@@ -383,7 +435,7 @@
                   <div class="twelve columns">
                      <div align="center">
                         <img src="/images/logos_educacion/muleSoftLogo.png"
-                        alt="Logo MuleSoft"
+                        alt="Logo MuleSoft - Certificación MCD Level 2"
                         width="200px"
                         height="200px">
                      </div>
@@ -403,7 +455,7 @@
                   <div class="twelve columns">
                      <div align="center">
                         <img src="/images/logos_educacion/muleSoftLogo.png"
-                        alt="Logo MuleSoft"
+                        alt="Logo MuleSoft - Certificación MCD Level 1"
                         width="200px"
                         height="200px">
                      </div>
@@ -423,7 +475,7 @@
                   <div class="twelve columns">
                      <div align="center">
                         <img src="/images/logos_educacion/udemy.png"
-                        alt="Logo Udemy"
+                        alt="Logo Udemy - Plataforma de educación online"
                         width="180px"
                         height="180px"
                         align="center">
@@ -446,7 +498,7 @@
 
                      <div align="center">
                         <img src="/images/logos_educacion/neoris.png"
-                        alt="Logo Neoris"
+                        alt="Logo Neoris - Empresa de capacitación"
                         width="200px"
                         height="200px">
                      </div>
@@ -469,7 +521,7 @@
 
                      <div align="center">
                         <img src="/images/logos_educacion/educacion_it.svg"
-                        alt="Logo Educación IT"
+                        alt="Logo Educación IT - Academia de programación"
                         width="250px"
                         height="250px">
                      </div>
@@ -495,7 +547,7 @@
       <div class="row skill">
 
          <div class="three columns header-col">
-            <h1><span data-i18n="skills">Conocimientos</span></h1>
+            <h2><span data-i18n="skills">Conocimientos</span></h2>
          </div>
          <div class="nine columns main-col">
 
@@ -504,20 +556,20 @@
 				<div class="bars">
 
                <p> 
-                  <a href="" title="MuleSoft"><img src="https://www.vectorlogo.zone/logos/mulesoft/mulesoft-icon.svg" alt="mulesoft" width="80" height="80"/></a>
-                  <a href="" title="Postman"><img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="postman" width="80" height="80"/></a>
-                  <a href="" title="Git"><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="git" width="80" height="80"/></a>
-                  <a href="" title="Php"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="php" width="80" height="80"/></a>
-                  <a href="" title="Android"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="android" width="80" height="80"/></a>
-                  <a href="" title="Kotlin"><img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg" alt="kotlin" width="80" height="80"/></a>
-                  <a href="" title="JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="javascript" width="80" height="80"/></a>
-                  <a href="" title="Html5"><img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="Html" width="80" height="80"/></a>
-                  <a href="" title="CSS"><img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-official.svg" alt="Css" width="80" height="80"/></a>
-                  <a href="" title="MySql"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="mysql" width="80" height="80"/></a>
-                  <a href="" title="C#"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="csharp" width="80" height="80"/></a>
-                  <a href="" title="Firebase"><img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="firebase" width="80" height="80"/></a>
-                  <a href="" title="MongoDb"><img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="mongo" width="80" height="80"/></a>
-                  <a href="" title="Angular"><img src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg" alt="Angular" width="80" height="80"/></a>
+                  <a href="" title="MuleSoft"><img src="https://www.vectorlogo.zone/logos/mulesoft/mulesoft-icon.svg" alt="Logo MuleSoft - Plataforma de integración" width="80" height="80"/></a>
+                  <a href="" title="Postman"><img src="https://www.vectorlogo.zone/logos/getpostman/getpostman-icon.svg" alt="Logo Postman - Herramienta de prueba de APIs" width="80" height="80"/></a>
+                  <a href="" title="Git"><img src="https://www.vectorlogo.zone/logos/git-scm/git-scm-icon.svg" alt="Logo Git - Control de versiones" width="80" height="80"/></a>
+                  <a href="" title="Php"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/php/php-original.svg" alt="Logo PHP - Lenguaje de programación" width="80" height="80"/></a>
+                  <a href="" title="Android"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/android/android-original-wordmark.svg" alt="Logo Android - Sistema operativo móvil" width="80" height="80"/></a>
+                  <a href="" title="Kotlin"><img src="https://www.vectorlogo.zone/logos/kotlinlang/kotlinlang-icon.svg" alt="Logo Kotlin - Lenguaje de programación" width="80" height="80"/></a>
+                  <a href="" title="JavaScript"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/javascript/javascript-original.svg" alt="Logo JavaScript - Lenguaje de programación" width="80" height="80"/></a>
+                  <a href="" title="Html5"><img src="https://www.vectorlogo.zone/logos/w3_html5/w3_html5-icon.svg" alt="Logo HTML5 - Lenguaje de marcado" width="80" height="80"/></a>
+                  <a href="" title="CSS"><img src="https://www.vectorlogo.zone/logos/w3_css/w3_css-official.svg" alt="Logo CSS - Hojas de estilo" width="80" height="80"/></a>
+                  <a href="" title="MySql"> <img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/mysql/mysql-original-wordmark.svg" alt="Logo MySQL - Base de datos relacional" width="80" height="80"/></a>
+                  <a href="" title="C#"><img src="https://raw.githubusercontent.com/devicons/devicon/master/icons/csharp/csharp-original.svg" alt="Logo C Sharp - Lenguaje de programación" width="80" height="80"/></a>
+                  <a href="" title="Firebase"><img src="https://www.vectorlogo.zone/logos/firebase/firebase-icon.svg" alt="Logo Firebase - Plataforma Google" width="80" height="80"/></a>
+                  <a href="" title="MongoDb"><img src="https://www.vectorlogo.zone/logos/mongodb/mongodb-icon.svg" alt="Logo MongoDB - Base de datos NoSQL" width="80" height="80"/></a>
+                  <a href="" title="Angular"><img src="https://www.vectorlogo.zone/logos/angular/angular-icon.svg" alt="Logo Angular - Framework JavaScript" width="80" height="80"/></a>
                </p>
 
 				</div><!-- end skill-bars -->
@@ -539,7 +591,7 @@
          <div class="row section-head">
 
             <div class="two columns header-col">
-               <h1><span data-i18n="contact_section">Contacto</span></h1>
+               <h2><span data-i18n="contact_section">Contacto</span></h2>
             </div>
 
             <div class="ten columns">
@@ -559,13 +611,13 @@
                   <div>
 						   <label for="contactName" data-i18n="form_name">Nombre</label>
 						   <span class="required" data-i18n="required">*</span>
-						   <input type="text" value="" size="35" id="contactName" name="contactName" data-i18n="form_name" placeholder="Nombre">
+						   <input type="text" value="" size="35" id="contactName" name="contactName" data-i18n="form_name" placeholder="Nombre" required>
                   </div>
 
                   <div>
 						   <label for="contactEmail" data-i18n="form_email">Email</label>
 						   <span class="required" data-i18n="required">*</span>
-						   <input type="text" value="" size="35" id="contactEmail" name="contactEmail" data-i18n="form_email" placeholder="Email">
+						   <input type="email" value="" size="35" id="contactEmail" name="contactEmail" data-i18n="form_email" placeholder="Email" required>
                   </div>
 
                   <div>
@@ -576,13 +628,13 @@
                   <div>
                      <label for="contactMessage" data-i18n="form_message">Mensaje</label>
                      <span class="required" data-i18n="required">*</span>
-                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage" data-i18n="form_message" placeholder="Mensaje"></textarea>
+                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage" data-i18n="form_message" placeholder="Mensaje" required></textarea>
                   </div>
 
                   <div>
                      <button class="submit" data-i18n="form_send">Enviar</button>
                      <span id="image-loader">
-                        <img alt="" src="images/loader.gif">
+                        <img alt="Cargando..." src="images/loader.gif">
                      </span>
                   </div>
 
@@ -603,7 +655,7 @@
 
                <div class="widget widget_contact">
 
-					   <h4><u data-i18n="contact_details">Detalles de Contacto</u></h4>
+					   <h3><u data-i18n="contact_details">Detalles de Contacto</u></h3>
 					   <p class="address" style="color:white;">
 						   <span>Leandro Cabeza</span><br>
                         <span data-i18n="location">Berazategui, Buenos Aires</span><br>
@@ -630,10 +682,10 @@
          <div class="twelve columns">
 
             <ul class="social-links">
-               <li><a href="https://github.com/LeanCabeza"><i class="fa fa-github"></i></a></li>
-               <li><a href="https://www.linkedin.com/in/leandro-cabeza/"><i class="fa fa-linkedin"></i></a></li>
-               <li><a href="https://www.facebook.com/leandro.cabeza97/"><i class="fa fa-facebook"></i></a></li>
-               <li><a href="https://www.instagram.com/leeancabeza/"><i class="fa fa-instagram"></i></a></li>
+               <li><a href="https://github.com/LeanCabeza" title="GitHub - Leandro Cabeza"><i class="fa fa-github" aria-hidden="true"></i></a></li>
+               <li><a href="https://www.linkedin.com/in/leandro-cabeza/" title="LinkedIn - Leandro Cabeza"><i class="fa fa-linkedin" aria-hidden="true"></i></a></li>
+               <li><a href="https://www.facebook.com/leandro.cabeza97/" title="Facebook - Leandro Cabeza"><i class="fa fa-facebook" aria-hidden="true"></i></a></li>
+               <li><a href="https://www.instagram.com/leeancabeza/" title="Instagram - Leandro Cabeza"><i class="fa fa-instagram" aria-hidden="true"></i></a></li>
             </ul>
 
             <ul class="copyright">
@@ -643,7 +695,7 @@
 
          </div>
 
-         <div id="go-top"><a class="smoothscroll" title="Back to Top" href="#home"><i class="icon-up-open"></i></a></div>
+         <div id="go-top"><a class="smoothscroll" title="Ir al inicio" href="#home"><i class="icon-up-open"></i></a></div>
 
       </div>
 
