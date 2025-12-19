@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en">
+<html class="no-js" lang="es">
 <head>
 
    <!--- Basic Page Needs
@@ -44,9 +44,49 @@
 	================================================== -->
 	<link rel="shortcut icon" href="favicon.png" >
 
+   <style>
+      .language-toggle {
+         position: fixed;
+         top: 20px;
+         right: 20px;
+         background-color: #17a697;
+         color: white;
+         border: none;
+         padding: 10px 18px;
+         border-radius: 8px;
+         cursor: pointer;
+         font-weight: bold;
+         z-index: 1000;
+         font-size: 16px;
+         display: flex;
+         align-items: center;
+         gap: 10px;
+         transition: background-color 0.3s ease;
+         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+      }
+      .language-toggle:hover {
+         background-color: #0f8577;
+      }
+      .flag-img {
+         width: 28px;
+         height: 20px;
+         border-radius: 3px;
+         object-fit: cover;
+         box-shadow: 0 1px 3px rgba(0,0,0,0.12);
+         border: 1px solid #eee;
+         background: #fff;
+      }
+   </style>
+
 </head>
 
 <body>
+
+   <!-- Language Toggle Button -->
+   <button id="language-toggle" class="language-toggle" onclick="toggleLanguage()">
+      <img class="flag-img" id="flag-img" src="https://flagcdn.com/es.svg" alt="Bandera" />
+      <span id="lang-text">Español</span>
+   </button>
 
    <!-- Header
    ================================================== -->
@@ -58,20 +98,19 @@
 	      <a class="mobile-btn" href="#" title="Hide navigation">Hide navigation</a>
 
          <ul id="nav" class="nav">
-            <li class="current"><a class="smoothscroll" href="#home">Inicio</a></li>
-            <li><a class="smoothscroll" href="#about">Acerca de</a></li>
-	         <li><a class="smoothscroll" href="#resume">Experiencia Laboral</a></li>
-            <li><a class="smoothscroll" href="#education">Educación</a></li>
-            <!-- <li><a class="smoothscroll" href="#portfolio">Proyectos</a></li> -->
-            <li><a class="smoothscroll" href="#contact">Contacto</a></li>
+            <li class="current"><a class="smoothscroll" href="#home" data-i18n="nav_home">Inicio</a></li>
+            <li><a class="smoothscroll" href="#about" data-i18n="nav_about">Acerca de</a></li>
+	         <li><a class="smoothscroll" href="#resume" data-i18n="nav_resume">Experiencia Laboral</a></li>
+            <li><a class="smoothscroll" href="#education" data-i18n="nav_education">Educación</a></li>
+            <li><a class="smoothscroll" href="#contact" data-i18n="nav_contact">Contacto</a></li>
          </ul> <!-- end #nav -->
 
       </nav> <!-- end #nav-wrap -->
 
       <div class="row banner">
          <div class="banner-text">
-            <h1 class="responsive-headline">Leandro Cabeza</h1>
-            <h2 class="responsive-headline" style="color:white;">Desarrollador de Software</h2>
+            <h1 class="responsive-headline" data-i18n="banner_title">Leandro Cabeza</h1>
+            <h2 class="responsive-headline" style="color:white;" data-i18n="banner_subtitle">Desarrollador de Software</h2>
             <hr />
             <ul class="social">
                <li><a href="https://github.com/LeanCabeza"><i class="fa fa-github"></i></a></li>
@@ -103,34 +142,31 @@
 
          <div class="nine columns main-col">
 
-            <h2>Acerca de mi</h2>
+            <h2 data-i18n="about_title">Acerca de mi</h2>
 
-            <p style="color:white;">
-               Mi nombre es Leandro y soy un desarrollador que se especializa en el diseño e implementación de soluciones de integración utilizando la plataforma Mulesoft. <br>
-               Mi principal labor es crear flujos de datos, realizar transformaciones de datos y además conectar aplicaciones empresariales mediante diferentes protocolos y herramientas. <br>
-               Siempre doy lo mejor de mí en todo lo que me propongo, disfruto mucho de compartir mis conocimientos y trabajar en equipo. Estoy constantemente actualizándome en las últimas tendencias y mejores prácticas de la integración de sistemas con el fin de brindar soluciones de mayor calidad.
+            <p style="color:white;" data-i18n="about_text">
+               Mi nombre es Leandro y soy un desarrollador que se especializa en el diseño e implementación de soluciones de integración utilizando la plataforma Mulesoft. Mi principal labor es crear flujos de datos, realizar transformaciones de datos y además conectar aplicaciones empresariales mediante diferentes protocolos y herramientas. Siempre doy lo mejor de mí en todo lo que me propongo, disfruto mucho de compartir mis conocimientos y trabajar en equipo. Estoy constantemente actualizándome en las últimas tendencias y mejores prácticas de la integración de sistemas con el fin de brindar soluciones de mayor calidad.
             </p>
 
             <div class="row">
 
                <div class="columns contact-details">
 
-                  <h2><u>Detalles de Contacto</u></h2>
+                  <h2><u data-i18n="contact_details">Detalles de Contacto</u></h2>
                   <p class="address" style="color:white;">
 						   <span>Leandro Cabeza</span><br>
-						   <span>Berazategui, Buenos Aires<br>
-						         Argentina, CP 1884.
-                     </span><br>
-						   <span>(011)3649-2674</span><br>
-                     <span>cabezaleandro@gmail.com</span>
+						   <span data-i18n="location">Berazategui, Buenos Aires</span><br>
+						   <span data-i18n="country">Argentina, CP 1884.</span><br>
+						   <span data-i18n="phone">(011)3649-2674</span><br>
+                     <span data-i18n="email">cabezaleandro@gmail.com</span>
 					   </p>
 
                </div>
 
                <div class="columns download">
                   <p>
-                     <a download href="./cv/CV_LeandroCabeza_ES.pdf" class="button"><i class="fa fa-download"></i>Descargar CV en Español</a>
-                     <a download href="./cv/CV_LeandroCabeza_EN.pdf" class="button"><i class="fa fa-download"></i>Descargar CV en Inglés</a>
+                     <a download href="./cv/CV_LeandroCabeza_ES.pdf" class="button" data-i18n="download_cv_es"><i class="fa fa-download"></i>Descargar CV en Español</a>
+                     <a download href="./cv/CV_LeandroCabeza_EN.pdf" class="button" data-i18n="download_cv_en"><i class="fa fa-download"></i>Descargar CV en Inglés</a>
                   </p>
                </div>
 
@@ -152,7 +188,7 @@
       <div class="row work">
 
          <div class="three columns header-col">
-            <h1><span>Exp. Laboral</span></h1>
+            <h1><span data-i18n="exp_laboral">Exp. Laboral</span></h1>
          </div>
 
          <div class="nine columns main-col">
@@ -167,20 +203,20 @@
                      height="200px">
                   </div> 
 
-                  <p class="info">Mulesoft Developer Sr<span>&bull;</span> <em class="date">Octubre 2024 - Diciembre 2025</em></p>
+                  <p class="info"><span data-i18n="job_sr">Mulesoft Developer Sr</span><span>&bull;</span> <em class="date">Octubre 2024 - Diciembre 2025</em></p>
 
                   <p>
-                     <strong>Proyecto Airpak Centro America<br></strong>
-                     <strong>Labores:</strong><br>
-                     - Levantamiento, análisis y clarificación de requerimientos junto a stakeholders </br>
-                     - Participación activa en la refinación y priorización del backlog </br>
-                     - Diseño e implementación de soluciones de integración utilizando la plataforma MuleSoft (Anypoint Platform y Anypoint Studio) </br>
-                     - Desarrollo de flujos de datos eficientes, escalables y reutilizables </br>
-                     - Integración de aplicaciones empresariales mediante distintos protocolos (REST y SOAP) </br>
-                     - Transformación de datos en formatos JSON y XML utilizando DataWeave 2.0 </br>
-                     - Gestión de control de versiones mediante GIT </br>
-                     - Mantenimiento evolutivo y correctivo de soluciones existentes </br>
-                     - Soporte técnico durante las pruebas de integración con clientes y soporte post-implementación </br>
+                     <strong data-i18n="project_airpak">Proyecto Airpak Centro America</strong><br>
+                     <strong data-i18n="tasks">Labores:</strong><br>
+                     - <span data-i18n="task_requirements">Levantamiento, análisis y clarificación de requerimientos junto a stakeholders</span><br>
+                     - <span data-i18n="task_backlog">Participación activa en la refinación y priorización del backlog</span><br>
+                     - <span data-i18n="task_design">Diseño e implementación de soluciones de integración utilizando la plataforma MuleSoft (Anypoint Platform y Anypoint Studio)</span><br>
+                     - <span data-i18n="task_flows">Desarrollo de flujos de datos eficientes, escalables y reutilizables</span><br>
+                     - <span data-i18n="task_integration">Integración de aplicaciones empresariales mediante distintos protocolos (REST y SOAP)</span><br>
+                     - <span data-i18n="task_dataweave">Transformación de datos en formatos JSON y XML utilizando DataWeave 2.0</span><br>
+                     - <span data-i18n="task_git">Gestión de control de versiones mediante GIT</span><br>
+                     - <span data-i18n="task_maintenance">Mantenimiento evolutivo y correctivo de soluciones existentes</span><br>
+                     - <span data-i18n="task_support">Soporte técnico durante las pruebas de integración con clientes y soporte post-implementación</span><br>
                   </p>
 
                </div>
@@ -198,21 +234,21 @@
                      height="200px">
                   </div> 
                   
-                  <p class="info">Mulesoft Developer SSR<span>&bull;</span> <em class="date">Marzo 2022 - Octubre 2024</em></p>
+                  <p class="info"><span data-i18n="job_ssr">Mulesoft Developer SSR</span><span>&bull;</span> <em class="date">Marzo 2022 - Octubre 2024</em></p>
 
                   <p>
-                     <strong>Proyecto ETB Colombia<br></strong>
-                     <strong>Labores:</strong><br>
-                     - Diseño e implementación de soluciones de integración utilizando la plataforma Mulesoft (Anypoint Platform y Anypoint Studio)<br>
-                     - Diseño de RAML, acorde a especificaciones<br>
-                     - Creación de flujos de datos eficientes, escalables y reutilizables<br>
-                     - Conexión de aplicaciones empresariales mediante diferentes protocolos (REST y SOAP)<br>
-                     - Envío de peticiones mediante Postman-SoapUI, obtención de wsdl<br>
-                     - Herramienta de control de versiones GIT<br>
-                     - Transformaciones de datos Json y XML, utilizando DataWeave 2.0<br>
-                     - Mantenimiento y actualización de soluciones existentes<br>
-                     - Contribución a la documentación técnica y a la creación de manuales de usuario<br>
-                     - Proporcionar soporte técnico en diferentes pruebas de integracion al cliente y además soporte post-implementacion.<br>
+                     <strong data-i18n="project_etb">Proyecto ETB Colombia</strong><br>
+                     <strong data-i18n="tasks">Labores:</strong><br>
+                     - <span data-i18n="task_design">Diseño e implementación de soluciones de integración utilizando la plataforma MuleSoft (Anypoint Platform y Anypoint Studio)</span><br>
+                     - <span data-i18n="task_raml">Diseño de RAML, acorde a especificaciones</span><br>
+                     - <span data-i18n="task_flows">Desarrollo de flujos de datos eficientes, escalables y reutilizables</span><br>
+                     - <span data-i18n="task_integration">Integración de aplicaciones empresariales mediante diferentes protocolos (REST y SOAP)</span><br>
+                     - <span data-i18n="task_postman">Envío de peticiones mediante Postman</span><br>
+                     - <span data-i18n="task_git">Gestión de control de versiones mediante GIT</span><br>
+                     - <span data-i18n="task_dataweave">Transformación de datos en formatos JSON y XML utilizando DataWeave 2.0</span><br>
+                     - <span data-i18n="task_maintenance">Mantenimiento y actualización de soluciones existentes</span><br>
+                     - <span data-i18n="task_documentation">Contribución a la documentación técnica y a la creación de manuales de usuario</span><br>
+                     - <span data-i18n="task_support">Soporte técnico durante las pruebas de integración con clientes y soporte post-implementación</span><br>
                   </p>
 
                </div>
@@ -231,23 +267,23 @@
                      height="150px">
                   </div> 
                   
-                  <p class="info">Mulesoft Developer<span>&bull;</span> <em class="date">Diciembre 2021 - Marzo 2022</em></p>
+                  <p class="info"><span data-i18n="job_dev">Mulesoft Developer</span><span>&bull;</span> <em class="date">Diciembre 2021 - Marzo 2022</em></p>
 
                      <p>
-                        <strong>Proyecto Telefonica España<br></strong>
-                        <strong>Labores:</strong><br>
-                        - Proporcionar soporte técnico en diferentes pruebas a los equipos de operaciones<br>
-                        - Estimacion de esfuerzo<br>
-                        - Diseño e implementación de soluciones de integración<br>
-                        - Diseño de RAML, acorde a especificaciones<br>
-                        - Creación de flujos de datos eficientes, escalables y reutilizables<br>
-                        - Conexión de aplicaciones empresariales mediante diferentes protocolos (REST y SOAP)<br>
-                        - Envío de peticiones mediante Postman<br>
+                        <strong data-i18n="project_telefonica">Proyecto Telefonica España</strong><br>
+                        <strong data-i18n="tasks">Labores:</strong><br>
+                        - <span data-i18n="task_support">Soporte técnico durante las pruebas de integración con clientes y soporte post-implementación</span><br>
+                        - Estimación de esfuerzo<br>
+                        - <span data-i18n="task_design">Diseño e implementación de soluciones de integración</span><br>
+                        - <span data-i18n="task_raml">Diseño de RAML, acorde a especificaciones</span><br>
+                        - <span data-i18n="task_flows">Desarrollo de flujos de datos eficientes, escalables y reutilizables</span><br>
+                        - <span data-i18n="task_integration">Integración de aplicaciones empresariales mediante diferentes protocolos (REST y SOAP)</span><br>
+                        - <span data-i18n="task_postman">Envío de peticiones mediante Postman</span><br>
                         - Transformaciones de datos Json<br>
-                        - Mantenimiento y actualización de soluciones existentes<br>
-                        - Manejo de Errores<br>
-                        - Contribución a la documentación técnica y a la creación de manuales de usuario<br>
-                        - Herramienta de control de versiones GitHub<br>
+                        - <span data-i18n="task_maintenance">Mantenimiento y actualización de soluciones existentes</span><br>
+                        - <span data-i18n="task_errors">Manejo de Errores</span><br>
+                        - <span data-i18n="task_documentation">Contribución a la documentación técnica y a la creación de manuales de usuario</span><br>
+                        - <span data-i18n="task_git">Gestión de control de versiones mediante GIT</span><br>
                      </p>
 
                </div>
@@ -265,18 +301,18 @@
                   </div>
                   
 
-                  <p class="info">Mulesoft Developer <span>&bull;</span> <em class="date">Septiembre 2021 - Diciembre 2021</em></p>
+                  <p class="info"><span data-i18n="job_dev">Mulesoft Developer</span><span>&bull;</span> <em class="date">Septiembre 2021 - Diciembre 2021</em></p>
 
                   <p>
-                     <strong>Proyecto WorldVisionInternational</strong><br>
-                     <strong>Labores:</strong><br>
-                     - Diseño e implementación de soluciones de integración<br>
-                     - Envío de peticiones mediante Postman<br>
+                     <strong data-i18n="project_worldvision">Proyecto WorldVisionInternational</strong><br>
+                     <strong data-i18n="tasks">Labores:</strong><br>
+                     - <span data-i18n="task_design">Diseño e implementación de soluciones de integración</span><br>
+                     - <span data-i18n="task_postman">Envío de peticiones mediante Postman</span><br>
                      - Transformaciones de datos Json<br>
-                     - Mantenimiento y actualización de soluciones existentes<br>
-                     - Manejo de Errores<br>
-                     - Contribución a la documentación técnica<br>
-                     - Herramienta de control de versiones Git<br>
+                     - <span data-i18n="task_maintenance">Mantenimiento y actualización de soluciones existentes</span><br>
+                     - <span data-i18n="task_errors">Manejo de Errores</span><br>
+                     - <span data-i18n="task_documentation">Contribución a la documentación técnica</span><br>
+                     - <span data-i18n="task_git">Gestión de control de versiones mediante GIT</span><br>
                   </p>
 
                </div>
@@ -293,9 +329,9 @@
                      height="200px">
                   </div>
                   
-                  <p class="info">Gestor de Cobranzas (Santander) <span>&bull;</span> <em class="date">Junio 2017 - Julio 2021</em></p>
+                  <p class="info"><span data-i18n="job_collections">Gestor de Cobranzas (Santander)</span><span>&bull;</span> <em class="date">Junio 2017 - Julio 2021</em></p>
 
-                  <p>
+                  <p data-i18n="collections_desc">
                      Gestión de llamadas a clientes del Banco Santander que se encuentren en atraso , con el fin de brindarle solución a sus dificultados o asesorarlos con diversas formas de pago más accesibles.
                   </p>
 
@@ -314,7 +350,7 @@
          <div class="row education">
 
             <div class="three columns header-col">
-               <h1><span>Educación</span></h1>
+               <h1><span data-i18n="education">Educación</span></h1>
             </div>
 
             <div class="nine columns main-col">
@@ -329,13 +365,15 @@
                         height="120px">
                      </div>
                      
-                     <p class="info">Tecnicatura Universitaria en Programación <span>&bull;</span> <em class="date">Febrero 2020 - Febrero 2024</em></p>
-                     <p>
-                     Estoy recibido de Tecnico Universitario en Programación, a lo largo de la carrera pude obtener diversos conocimientos que me son muy utiles para mi labor diaria, ademas de capacitarme para detectar y analizar problemas de procesamiento de datos.<br>
-
-                     Pude trabajar satisfactoriamente con herramientas y tecnologias tales como "C", "#C", "Js", "Php", "Angular", "Ionic", "Git".<br>
-                     (<a href="https://github.com/LeanCabeza"><i>Se puede visualizar todos los proyectos realizados en mí github)</i></a>.
+                     <p class="info"><span data-i18n="degree_tech">Tecnicatura Universitaria en Programación</span><span>&bull;</span> <em class="date">Febrero 2020 - Febrero 2024</em></p>
+                     <p data-i18n="degree_desc">
+                     Estoy recibido de Tecnico Universitario en Programación, a lo largo de la carrera pude obtener diversos conocimientos que me son muy utiles para mi labor diaria, ademas de capacitarme para detectar y analizar problemas de procesamiento de datos.
                      </p>
+
+                     <p data-i18n="degree_tech_text">
+                     Pude trabajar satisfactoriamente con herramientas y tecnologias tales como "C", "#C", "Js", "Php", "Angular", "Ionic", "Git".
+                     </p>
+                     <p>(<a href="https://github.com/LeanCabeza"><i data-i18n="github_text">Se puede visualizar todos los proyectos realizados en mí github)</i></a>.</p>
 
                   </div>
 
@@ -345,16 +383,16 @@
                   <div class="twelve columns">
                      <div align="center">
                         <img src="/images/logos_educacion/muleSoftLogo.png"
-                        alt="Logo Utn Avellaneda"
+                        alt="Logo MuleSoft"
                         width="200px"
                         height="200px">
                      </div>
                      
-                     <p class="info">MuleSoft Certified Developer - Level 2<span>&bull;</span> <em class="date">Septiembre 2024</em></p>
-                     <p>
+                     <p class="info"><span data-i18n="cert_mcd2">MuleSoft Certified Developer - Level 2</span><span>&bull;</span> <em class="date">Septiembre 2024</em></p>
+                     <p data-i18n="cert_mcd2_desc">
                         La certificación MuleSoft Certified Developer – Level 2 valida que un desarrollador tiene conocimientos y habilidades avanzadas para trabajar de forma independiente con aplicaciones MuleSoft de nivel profesional, especialmente aquellas que son "production-ready" (listas para producción) y se usan dentro de un entorno real.
                      </p>
-                     <h4><a download href="./certificaciones/MCD2.pdf"> Ver Certificación</a> </h4><br>
+                     <h4><a download href="./certificaciones/MCD2.pdf" data-i18n="view_cert">Ver Certificación</a> </h4><br>
 
                   </div>
 
@@ -365,16 +403,16 @@
                   <div class="twelve columns">
                      <div align="center">
                         <img src="/images/logos_educacion/muleSoftLogo.png"
-                        alt="Logo Utn Avellaneda"
+                        alt="Logo MuleSoft"
                         width="200px"
                         height="200px">
                      </div>
                      
-                     <p class="info">MuleSoft Certified Developer - Level 1<span>&bull;</span> <em class="date">Julio 2022</em></p>
-                     <p>
+                     <p class="info"><span data-i18n="cert_mcd1">MuleSoft Certified Developer - Level 1</span><span>&bull;</span> <em class="date">Julio 2022</em></p>
+                     <p data-i18n="cert_mcd1_desc">
                         El examen MuleSoft Certified Developer – Nivel 1, valida que un desarrollador tiene el conocimiento y las habilidades necesarias para diseñar, construir, probar y depurar, implementar y administrar API básicas e integraciones.
                      </p>
-                     <h4><a download href="./certificaciones/MCD1.pdf"> Ver Certificación</a> </h4><br>
+                     <h4><a download href="./certificaciones/MCD1.pdf" data-i18n="view_cert">Ver Certificación</a> </h4><br>
 
                   </div>
 
@@ -390,16 +428,14 @@
                         height="180px"
                         align="center">
                      </div>
-                     <p class="info">Curso de Data Weave 2.0 a profundidad <span>&bull;</span> <em class="date">Enero 2023</em></p>
-                     <p>Curso de DataWeave 2.0, lenguaje utilizado para realizar diferentes transformaciones y procesamiento de datos en MuleSoft.
-                     </p>
-                     <h4> <a download href="./certificaciones/Udemy_DataWeave.pdf"> Ver Certificación</a> </h4><br>
+                     <p class="info"><span data-i18n="cert_dataweave">Curso de Data Weave 2.0 a profundidad</span><span>&bull;</span> <em class="date">Enero 2023</em></p>
+                     <p data-i18n="cert_dataweave_desc">Curso de DataWeave 2.0, lenguaje utilizado para realizar diferentes transformaciones y procesamiento de datos en MuleSoft.</p>
+                     <h4> <a download href="./certificaciones/Udemy_DataWeave.pdf" data-i18n="view_cert">Ver Certificación</a> </h4><br>
 
-                     <p class="info">Curso de Android 11 con Kotlin <span>&bull;</span> <em class="date">Agosto 2021</em></p>
-                     <p>Curso de Android 11 donde aprendí mas acerca de los distintos elementos disponibles en Android.
-                     <a href="https://github.com/LeanCabeza"><i>(Se puede visualizar todos los proyectos realizados en mi github)</a></i>
-                     </p>
-                     <h4> <a download href="./certificaciones/udemy_kotlin.pdf"> Ver Certificación</a> </h4><br>
+                     <p class="info"><span data-i18n="cert_kotlin">Curso de Android 11 con Kotlin</span><span>&bull;</span> <em class="date">Agosto 2021</em></p>
+                     <p data-i18n="cert_kotlin_desc">Curso de Android 11 donde aprendí mas acerca de los distintos elementos disponibles en Android.</p>
+                     <p>(<a href="https://github.com/LeanCabeza"><i data-i18n="github_text">Se puede visualizar todos los proyectos realizados en mi github</i></a>)</p>
+                     <h4> <a download href="./certificaciones/udemy_kotlin.pdf" data-i18n="view_cert">Ver Certificación</a> </h4><br>
                   </div>
 
                </div> <!-- item end -->
@@ -415,14 +451,14 @@
                         height="200px">
                      </div>
 
-                     <p class="info">LAB Android <span>&bull;</span> <em class="date">Julio 2021</em></p>
+                     <p class="info"><span data-i18n="cert_lab_android">LAB Android</span><span>&bull;</span> <em class="date">Julio 2021</em></p>
 
-                     <p>
-                     Programa de capacitaciones que ofrece la empresa Neoris con el fin de capacitar personas en ciertas tecnologías, la duración es de aproximadamente 5 semanas.<br>
-                     Entre lo que aprendí, se puede destacar <b>Fragments, Recycler Views, Linear Layouts, Adapters, Firestore(Conexion a base de datos, Altas, Bajas, modificaciones y ademas filtrado por parametros), Material Design Components, Unit Tests, Implementation tests, Dialogs, Splash Screen. </b>
-                     (<a href="https://github.com/LeanCabeza"><i>Se pueden visualizar en mí github</i></a>).
+                     <p data-i18n="cert_lab_android_desc">
+                     Programa de capacitaciones que ofrece la empresa Neoris con el fin de capacitar personas en ciertas tecnologías, la duración es de aproximadamente 5 semanas.
                      </p>
-                     <h4> <a download href="./certificaciones/neolab.pdf"> Ver Certificación</a> </h4><br>
+                     <p>Entre lo que aprendí, se puede destacar <b data-i18n="cert_lab_android_topics">Fragments, Recycler Views, Linear Layouts, Adapters, Firestore(Conexion a base de datos, Altas, Bajas, modificaciones y ademas filtrado por parametros), Material Design Components, Unit Tests, Implementation tests, Dialogs, Splash Screen. </b></p>
+                     <p>(<a href="https://github.com/LeanCabeza"><i data-i18n="github_text">Se pueden visualizar en mí github</i></a>).</p>
+                     <h4> <a download href="./certificaciones/neolab.pdf" data-i18n="view_cert">Ver Certificación</a> </h4><br>
                   </div>
 
                </div> <!-- item end -->
@@ -438,17 +474,11 @@
                         height="250px">
                      </div>
                      
-                     <p class="info">Programacion Web <span>&bull;</span> <em class="date">Enero 2019</em></p>
-                     <p>
-                        Mediante una serie de cursos dí mis primeros pasitos en la informatica.</br> 
-                        En los cuales aprendí lo introductorio de Programacion Web, 
-                        <a download href="./certificaciones/it_objetos.pdf">Programación orientada a objetos</a> y los lenguajes 
-                        <a download href="./certificaciones/it_html.pdf">HTML y Css</a>, 
-                        <a download href="./certificaciones/it_js.pdf">Js</a>, 
-                        <a download href="./certificaciones/it_sql.pdf">MySql</a>, 
-                        <a download href="./certificaciones/it_phpYsql.pdf">Php</a>. 
-                        <br>(<i>Haciendo click en los lenguajes se pueden descargar las certificaciones</i>).
+                     <p class="info"><span data-i18n="cert_web">Programacion Web</span><span>&bull;</span> <em class="date">Enero 2019</em></p>
+                     <p data-i18n="cert_web_desc">
+                        Mediante una serie de cursos dí mis primeros pasitos en la informatica. En los cuales aprendí lo introductorio de Programacion Web, Programación orientada a objetos y los lenguajes HTML y CSS, Js, MySql, Php.
                      </p>
+                     <p>(<i data-i18n="cert_link_text">Haciendo click en los lenguajes se pueden descargar las certificaciones</i>).</p>
                   
                   </div>
 
@@ -465,11 +495,11 @@
       <div class="row skill">
 
          <div class="three columns header-col">
-            <h1><span>Conocimientos</span></h1>
+            <h1><span data-i18n="skills">Conocimientos</span></h1>
          </div>
          <div class="nine columns main-col">
 
-            <p>Conocimiento en tecnologias/lenguajes tales como :</p>
+            <p data-i18n="skills_text">Conocimiento en tecnologias/lenguajes tales como :</p>
 
 				<div class="bars">
 
@@ -502,189 +532,6 @@
 
    
 
-   <!-- Portfolio Section -->
-   
-   <!--
-   
-   <section id="portfolio">
-
-      <div class="row">
-
-         <div class="twelve columns collapsed">
-
-            <h1>Algunos de mis trabajos.</h1>
-
-            <div id="portfolio-wrapper" class="bgrid-quarters s-bgrid-thirds cf">
-
-          	   <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-01" title="">
-                        <img alt="" src="images/portfolio/Censar.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>CensAR</h5>
-                              <p>Mobile App</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div>
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-02" title="">
-                        <img alt="" src="images/portfolio/Saludable.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>SaludableAPP</h5>
-                              <p>Mobile App</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div>
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-03" title="">
-                        <img alt="" src="images/portfolio/Fumikast.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Fumikast</h5>
-                              <p>Pagina Web</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div>
-
-               <div class="columns portfolio-item">
-                  <div class="item-wrap">
-
-                     <a href="#modal-04" title="">
-                        <img alt="" src="images/portfolio/github.png">
-                        <div class="overlay">
-                           <div class="portfolio-item-meta">
-          					      <h5>Restaurant Backend</h5>
-                              <p>Backend Php</p>
-          					   </div>
-                        </div>
-                        <div class="link-icon"><i class="icon-plus"></i></div>
-                     </a>
-
-                  </div>
-          		</div>
-
-            </div> 
-
-         </div>
-         
-         -->
-
-         <!-- Modal Popup
-
-         <div id="modal-01" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/portfolio/Censar.png" alt="" />
-
-		      <div class="description-box">
-			      <h4>Censar Android App</h4>
-			      <p>Aplicacion para censar personas en la cual se puede: </p>
-               <ul>
-                  <li>Ver los datos son almacenados en una base de datos y la aplicación permite permitir hacer el alta, baja, modificación y consulta de personas censadas.</li>
-                  <li>Lista de todas las personas, mostrando toda su información, ordenadas de forma ascendente según su apellido.</li>
-                  <li>Lista de todas las personas mayores de 18 años que están desocupadas.</li>
-                  <li>Lista de todas las personas que están por debajo de la línea de pobreza. Se considera pobre a una persona cuyos ingresos son inferiores a cinco mil pesos mensuales.</li>
-                  <li>Cantidad de mujeres y cantidad de hombres entre la población.</li>
-                  <li>La aplicación movil debe ser capaz a futuro de conectarse a algun servidor para poder descargar la informacion de la base de datos</li>
-               </ul>
-               <span class="categories"><i class="fa fa-tag"></i>MobileApp</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://github.com/LeanCabeza/CensarAPP">Detalles</a>
-		         <a class="popup-modal-dismiss">Cerrar</a>
-            </div>
-
-	      </div>
-
-         <div id="modal-02" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/portfolio/Saludable.png" alt="" />
-
-		      <div class="description-box">
-			      <h4>Saludable App</h4>
-			      <p>Aplicacion para llevar el control de las comidas</p>
-               <ul>
-                  <li>MATERIAL DESIGN COMPONENTS.</li>
-                  <li>DIALOGS.</li>
-                  <li>CONSUMO DATOS DE UNA API Y LA MUESTRO EN MI APP.</li>
-                  <li>SPLASH SCREEN.</li>
-                  <li>FRAGMENTS.</li>
-                  <li>UNIT TEST</li>
-                  <li>FIREBASE : al usar firestore permite la persistencia de datos , por lo tanto se pueden loggear los usuarios tanto con internet , como sin internet Ademas , pueden agendar sus comidas y una vez que vuelvan a tener internet se sincronizaran con la base de datos.</li>
-                  <li>En esta aplicacion , tuve la inclinacion de usar mucho las visibilidades "VISIBLE" Y "GONE" , para hacer aparecer y desaparecer partes de la app.</li>
-                 
-               </ul>
-               <span class="categories"><i class="fa fa-tag"></i>MobileApp</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://github.com/LeanCabeza/SaludableAPP">Detalles</a>
-		         <a class="popup-modal-dismiss">Cerrar</a>
-            </div>
-
-	      </div>
-
-         <div id="modal-03" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/portfolio/Fumikast.png" alt="" />
-
-		      <div class="description-box">
-			      <h4>Fumikast</h4>
-			      <p>Pagina web diseñada para una empresa que se dedica a la fumigación.</p>
-               <span class="categories"><i class="fa fa-tag"></i>Desarrollo web</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://www.fumikast.com.ar/">Detalles</a>
-		         <a class="popup-modal-dismiss">Cerrar</a>
-            </div>
-
-	      </div>
-
-         <div id="modal-04" class="popup-modal mfp-hide">
-
-		      <img class="scale-with-grid" src="images/portfolio/github.png" alt="" />
-
-		      <div class="description-box">
-			      <h4>Restaurant Backend</h4>
-			      <p>Backend de un restaurant, exponiendo una gran cantidad de servicios web para que mediante las diferentes peticiones se pueda ir actualizando el estados y llevando el control de todos los empleados y ademas de las finanzas .</p>
-               <span class="categories"><i class="fa fa-tag"></i>Php,Backend.</span>
-		      </div>
-
-            <div class="link-box">
-               <a href="https://github.com/LeanCabeza/slim-php-mysql-heroku">Detalles</a>
-		         <a class="popup-modal-dismiss">Cerrar</a>
-            </div>
-
-	      </div>
-
-         
-      </div>
-
-   </section> -->
-
-
    <!-- Contact Section
    ================================================== -->
    <section id="contact">
@@ -692,11 +539,11 @@
          <div class="row section-head">
 
             <div class="two columns header-col">
-               <h1><span>Contacto</span></h1>
+               <h1><span data-i18n="contact_section">Contacto</span></h1>
             </div>
 
             <div class="ten columns">
-                  <p class="lead">Ante cualquier duda o consulta no dudes en comunicarte mediante cualquiera de mis redes sociales o sino también podés dejarme un mail a continuación.<br>Muchas gracias por visitar mi página. Exitos!!</p>
+                  <p class="lead" data-i18n="contact_lead">Ante cualquier duda o consulta no dudes en comunicarte mediante cualquiera de mis redes sociales o sino también podés dejarme un mail a continuación. Muchas gracias por visitar mi página. Exitos!!</p>
             </div>
 
          </div>
@@ -710,27 +557,30 @@
 					<fieldset>
 
                   <div>
-						   <label for="contactName">Nombre <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactName" name="contactName">
+						   <label for="contactName" data-i18n="form_name">Nombre</label>
+						   <span class="required" data-i18n="required">*</span>
+						   <input type="text" value="" size="35" id="contactName" name="contactName" data-i18n="form_name" placeholder="Nombre">
                   </div>
 
                   <div>
-						   <label for="contactEmail">Email <span class="required">*</span></label>
-						   <input type="text" value="" size="35" id="contactEmail" name="contactEmail">
+						   <label for="contactEmail" data-i18n="form_email">Email</label>
+						   <span class="required" data-i18n="required">*</span>
+						   <input type="text" value="" size="35" id="contactEmail" name="contactEmail" data-i18n="form_email" placeholder="Email">
                   </div>
 
                   <div>
-						   <label for="contactSubject">Asunto</label>
-						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject">
+						   <label for="contactSubject" data-i18n="form_subject">Asunto</label>
+						   <input type="text" value="" size="35" id="contactSubject" name="contactSubject" data-i18n="form_subject" placeholder="Asunto">
                   </div>
 
                   <div>
-                     <label for="contactMessage">Mensaje <span class="required">*</span></label>
-                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage"></textarea>
+                     <label for="contactMessage" data-i18n="form_message">Mensaje</label>
+                     <span class="required" data-i18n="required">*</span>
+                     <textarea cols="50" rows="15" id="contactMessage" name="contactMessage" data-i18n="form_message" placeholder="Mensaje"></textarea>
                   </div>
 
                   <div>
-                     <button class="submit">Enviar</button>
+                     <button class="submit" data-i18n="form_send">Enviar</button>
                      <span id="image-loader">
                         <img alt="" src="images/loader.gif">
                      </span>
@@ -742,8 +592,8 @@
                <!-- contact-warning -->
                <div id="message-warning"> Error boy</div>
                <!-- contact-success -->
-				   <div id="message-success">
-                  <i class="fa fa-check"></i>El mensaje fue enviado, muchas gracias!<br>
+				   <div id="message-success" data-i18n="message_success">
+                  <i class="fa fa-check"></i>El mensaje fue enviado, muchas gracias!
 				   </div>
 
             </div>
@@ -753,14 +603,13 @@
 
                <div class="widget widget_contact">
 
-					   <h4><u>Detalles de Contacto</u></h4>
+					   <h4><u data-i18n="contact_details">Detalles de Contacto</u></h4>
 					   <p class="address" style="color:white;">
 						   <span>Leandro Cabeza</span><br>
-                        <span>Berazategui, Buenos Aires<br>
-                              Argentina, CP 1884.
-                        </span><br>
-                        <span>(011)3649-2674</span><br>
-                        <span>cabezaleandro@gmail.com</span>
+                        <span data-i18n="location">Berazategui, Buenos Aires</span><br>
+                        <span data-i18n="country">Argentina, CP 1884.</span><br>
+                        <span data-i18n="phone">(011)3649-2674</span><br>
+                        <span data-i18n="email">cabezaleandro@gmail.com</span>
 					   </p>
 
 				   </div>
@@ -809,6 +658,7 @@
    <script src="js/waypoints.js"></script>
    <script src="js/jquery.fittext.js"></script>
    <script src="js/magnific-popup.js"></script>
+   <script src="js/language-switcher.js"></script>
    <script src="js/init.js"></script>
 
 </body>
