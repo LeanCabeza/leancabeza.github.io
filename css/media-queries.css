@@ -102,6 +102,15 @@
 
 @media only screen and (max-width: 767px) {
 
+   /* language toggle button */
+   .language-toggle {
+      top: 20px !important;
+      left: 20px !important;
+      padding: 8px 12px;
+      font-size: 12px;
+      width: auto;
+   }
+
    /* mobile navigation
    -------------------------------------------------------------------- */
    #nav-wrap {
